@@ -337,7 +337,7 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="name" class="form-label">Your Name *</label>
-                                <input type="text" class="form-control" id="name" required placeholder="Jane Smith">
+                                <input type="text" class="form-control" id="name" name="Name" required placeholder="Jane Smith">
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Email Address *</label>
@@ -345,15 +345,15 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="07700 000 000">
+                                <input type="tel" class="form-control" id="phone" name="Phone Number" placeholder="07700 000 000">
                             </div>
                             <div class="col-md-6">
                                 <label for="eventDate" class="form-label">Event Date *</label>
-                                <input type="date" class="form-control" id="eventDate" required>
+                                <input type="date" class="form-control" id="eventDate" name="Event Date" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="eventType" class="form-label">Event Type *</label>
-                                <select class="form-select" id="eventType" required>
+                                <select class="form-select" id="eventType" name="Event Type" required>
                                     <option value="">Select event type…</option>
                                     <option value="wedding">Wedding</option>
                                     <option value="corporate">Corporate Event</option>
@@ -365,11 +365,11 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="location" class="form-label">Event Location</label>
-                                <input type="text" class="form-control" id="location" placeholder="Town or venue name">
+                                <input type="text" class="form-control" id="location" name="Event Location" placeholder="Town or venue name">
                             </div>
                             <div class="col-12">
                                 <label for="message" class="form-label">Tell Us About Your Event</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="Any details, special requests, or questions…"></textarea>
+                                <textarea class="form-control" id="message" name="Message" rows="4" placeholder="Any details, special requests, or questions…"></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-gold w-100">
