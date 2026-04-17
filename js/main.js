@@ -233,6 +233,28 @@ if (videoFacade) {
     wrap.addEventListener('mouseleave', () => { if (!video.paused) controls.style.opacity = ''; });
 })();
 
+// ── Success chime (Web Audio API) ────────────────────────────
+function playChime() {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    const ac = new AudioCtx();
+    // E major arpeggio: E5 → G#5 → B5, bell-like decay
+    [[659.25, 0], [830.61, 0.18], [987.77, 0.36]].forEach(([freq, delay]) => {
+        const osc  = ac.createOscillator();
+        const gain = ac.createGain();
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        const t = ac.currentTime + delay;
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.22, t + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 2.0);
+        osc.start(t);
+        osc.stop(t + 2.0);
+    });
+}
+
 // Booking form: client-side validation + success message
 const bookingForm = document.getElementById('bookingForm');
 const formSuccess = document.getElementById('formSuccess');
@@ -268,6 +290,7 @@ bookingForm.addEventListener('submit', e => {
     .then(r => r.json())
     .then(data => {
         if (data.ok) {
+            playChime();
             formSuccess.classList.remove('d-none');
             bookingForm.reset();
             bookingForm.classList.remove('was-validated');
