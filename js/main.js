@@ -31,10 +31,10 @@ const videoFacade = document.getElementById('videoFacade');
 const videoEmbed  = document.getElementById('videoEmbed');
 if (videoFacade) {
     const activate = () => {
-        const iframe = document.getElementById('videoIframe');
-        iframe.src = iframe.dataset.src + '?autoplay=1';
         videoFacade.style.display = 'none';
         videoEmbed.classList.remove('d-none');
+        const video = document.getElementById('videoPlayer');
+        video.play();
     };
     videoFacade.addEventListener('click', activate);
     videoFacade.addEventListener('keydown', e => {
