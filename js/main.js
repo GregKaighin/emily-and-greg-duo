@@ -233,25 +233,45 @@ if (videoFacade) {
     wrap.addEventListener('mouseleave', () => { if (!video.paused) controls.style.opacity = ''; });
 })();
 
-// ── Success chime (Web Audio API) ────────────────────────────
+// ── Success chime — opening three notes of "Emily" (Bill Evans) ──
+// Melody: B4 → A4 → G4 (descending stepwise, key of G major)
 function playChime() {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     if (!AudioCtx) return;
     const ac = new AudioCtx();
-    // E major arpeggio: E5 → G#5 → B5, bell-like decay
-    [[659.25, 0], [830.61, 0.18], [987.77, 0.36]].forEach(([freq, delay]) => {
-        const osc  = ac.createOscillator();
-        const gain = ac.createGain();
-        osc.connect(gain);
-        gain.connect(ac.destination);
+
+    // [frequency, delaySeconds, peakGain, decaySeconds]
+    const notes = [
+        [493.88, 0.00, 0.20, 2.2],   // B4  — "Em"
+        [440.00, 0.30, 0.16, 2.0],   // A4  — "i"
+        [392.00, 0.52, 0.22, 3.0],   // G4  — "ly"  (held longest)
+    ];
+
+    notes.forEach(([freq, delay, peak, decay]) => {
+        const osc     = ac.createOscillator();
+        const gainNode = ac.createGain();
+
+        // Blend sine + triangle for a warm bell-like tone
+        const osc2     = ac.createOscillator();
+        const gain2    = ac.createGain();
+        osc2.type      = 'triangle';
+        osc2.frequency.value = freq;
+        gain2.gain.value = 0.3;
+        osc2.connect(gain2);
+        gain2.connect(gainNode);
+
+        osc.connect(gainNode);
+        gainNode.connect(ac.destination);
         osc.type = 'sine';
         osc.frequency.value = freq;
+
         const t = ac.currentTime + delay;
-        gain.gain.setValueAtTime(0, t);
-        gain.gain.linearRampToValueAtTime(0.22, t + 0.012);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + 2.0);
-        osc.start(t);
-        osc.stop(t + 2.0);
+        gainNode.gain.setValueAtTime(0, t);
+        gainNode.gain.linearRampToValueAtTime(peak, t + 0.015);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, t + decay);
+
+        osc.start(t);  osc.stop(t + decay);
+        osc2.start(t); osc2.stop(t + decay);
     });
 }
 
