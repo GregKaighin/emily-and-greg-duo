@@ -138,13 +138,33 @@
                     </div>
                     <!-- Video shown on click -->
                     <div class="video-wrap d-none" id="videoEmbed">
-                        <video
-                            id="videoPlayer"
-                            controls
-                            playsinline
-                            preload="none">
+                        <video id="videoPlayer" playsinline preload="none">
                             <source src="https://github.com/GregKaighin/emily-and-greg-duo/releases/download/v1.0/demo_video.mp4" type="video/mp4">
                         </video>
+                        <div class="vc" id="videoControls">
+                            <div class="vc-progress-area" id="vcProgressArea">
+                                <div class="vc-track">
+                                    <div class="vc-fill" id="vcFill"></div>
+                                    <div class="vc-thumb" id="vcThumb"></div>
+                                </div>
+                            </div>
+                            <div class="vc-bar">
+                                <div class="vc-left">
+                                    <button class="vc-btn" id="vcPlayPause" aria-label="Play">
+                                        <i class="fa-solid fa-play" id="vcPlayIcon"></i>
+                                    </button>
+                                    <span class="vc-time" id="vcTime">0:00 / 0:00</span>
+                                </div>
+                                <div class="vc-right">
+                                    <button class="vc-btn" id="vcMute" aria-label="Mute">
+                                        <i class="fa-solid fa-volume-high" id="vcVolIcon"></i>
+                                    </button>
+                                    <button class="vc-btn" id="vcFullscreen" aria-label="Fullscreen">
+                                        <i class="fa-solid fa-expand" id="vcFsIcon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

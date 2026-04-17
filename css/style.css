@@ -419,6 +419,88 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   CUSTOM VIDEO CONTROLS
+   ============================================================ */
+.vc {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 10;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    padding: 2rem 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.video-wrap:hover .vc,
+.vc.paused { opacity: 1; }
+
+.vc-progress-area {
+    padding: 0.6rem 1rem 0.3rem;
+    cursor: pointer;
+}
+.vc-track {
+    position: relative;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    transition: height 0.15s ease;
+}
+.vc-progress-area:hover .vc-track { height: 5px; }
+
+.vc-fill {
+    position: absolute;
+    top: 0; left: 0; height: 100%;
+    width: 0%;
+    background: var(--gold);
+    border-radius: 3px;
+    pointer-events: none;
+}
+.vc-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s ease;
+    box-shadow: 0 0 6px rgba(201,169,110,0.6);
+}
+.vc-progress-area:hover .vc-thumb,
+.vc-progress-area.dragging .vc-thumb { transform: translate(-50%, -50%) scale(1); }
+
+.vc-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.75rem 0.6rem;
+}
+.vc-left, .vc-right { display: flex; align-items: center; gap: 0.25rem; }
+
+.vc-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: color var(--transition), background var(--transition);
+    padding: 0;
+}
+.vc-btn:hover { color: var(--gold); background: rgba(255,255,255,0.08); }
+
+.vc-time {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.05em;
+    margin-left: 0.4rem;
+    white-space: nowrap;
+}
+
+/* ============================================================
    REPERTOIRE
    ============================================================ */
 .repertoire-card {
