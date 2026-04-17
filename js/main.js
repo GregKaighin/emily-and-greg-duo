@@ -1,3 +1,81 @@
+// ── Gold glitter overlay ─────────────────────────────────────
+(function initGlitter() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1000;';
+    document.body.appendChild(canvas);
+
+    const ctx  = canvas.getContext('2d');
+    const GOLD = '#c9a96e';
+    const COUNT = 90;
+    let W, H, particles;
+
+    function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+    }
+
+    function Particle(scatter) {
+        this.init = function(scatter) {
+            this.x     = Math.random() * W;
+            this.y     = scatter ? Math.random() * H : H + 6;
+            this.r     = Math.random() * 1.4 + 0.3;
+            this.vy    = -(Math.random() * 0.35 + 0.12);
+            this.vx    = (Math.random() - 0.5) * 0.12;
+            this.phase = Math.random() * Math.PI * 2;
+            this.freq  = Math.random() * 0.014 + 0.007;
+            this.type  = Math.random() > 0.6 ? 'star' : 'dot';
+        };
+        this.init(scatter);
+
+        this.update = function() {
+            this.y     += this.vy;
+            this.x     += this.vx;
+            this.phase += this.freq;
+            if (this.y < -6) this.init(false);
+        };
+
+        this.draw = function() {
+            const alpha = Math.sin(this.phase) * 0.17 + 0.21;
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, alpha);
+            ctx.fillStyle   = GOLD;
+            ctx.strokeStyle = GOLD;
+
+            if (this.type === 'star') {
+                const s = this.r * 2.8;
+                const d = s * 0.64;
+                ctx.lineWidth = 0.65;
+                ctx.beginPath();
+                ctx.moveTo(this.x - s, this.y); ctx.lineTo(this.x + s, this.y);
+                ctx.moveTo(this.x, this.y - s); ctx.lineTo(this.x, this.y + s);
+                ctx.moveTo(this.x - d, this.y - d); ctx.lineTo(this.x + d, this.y + d);
+                ctx.moveTo(this.x + d, this.y - d); ctx.lineTo(this.x - d, this.y + d);
+                ctx.stroke();
+            } else {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+        };
+    }
+
+    function loop() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('resize', () => {
+        resize();
+        particles.forEach(p => { if (p.x > W) p.init(false); });
+    });
+
+    resize();
+    particles = Array.from({ length: COUNT }, () => new Particle(true));
+    loop();
+})();
+
 // Navbar: transparent → dark on scroll
 const mainNav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
