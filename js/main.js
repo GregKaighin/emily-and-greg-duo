@@ -165,9 +165,29 @@ bookingForm.addEventListener('submit', e => {
         bookingForm.classList.add('was-validated');
         return;
     }
-    // TODO: replace this block with a real form submission (e.g. Formspree, Netlify Forms)
-    formSuccess.classList.remove('d-none');
-    bookingForm.reset();
-    bookingForm.classList.remove('was-validated');
-    setTimeout(() => formSuccess.classList.add('d-none'), 6000);
+    const submitBtn = bookingForm.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Sending…';
+
+    fetch('https://formspree.io/f/xyklwngb', {
+        method: 'POST',
+        body: new FormData(bookingForm),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.ok) {
+            formSuccess.classList.remove('d-none');
+            bookingForm.reset();
+            bookingForm.classList.remove('was-validated');
+            setTimeout(() => formSuccess.classList.add('d-none'), 6000);
+        } else {
+            alert('Sorry, something went wrong. Please email us directly at info@emilyandgregduo.co.uk');
+        }
+    })
+    .catch(() => alert('Sorry, something went wrong. Please email us directly at info@emilyandgregduo.co.uk'))
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Send Enquiry';
+    });
 });
