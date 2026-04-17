@@ -242,9 +242,9 @@ function playChime() {
 
     // [frequency, delaySeconds, peakGain, decaySeconds]
     const notes = [
-        [493.88, 0.00, 0.20, 2.2],   // B4  — "Em"
-        [440.00, 0.30, 0.16, 2.0],   // A4  — "i"
-        [392.00, 0.52, 0.22, 3.0],   // G4  — "ly"  (held longest)
+        [329.63, 0.00, 0.20, 2.2],   // E4
+        [987.77, 0.30, 0.16, 2.0],   // B5
+        [392.00, 0.52, 0.22, 3.0],   // G4
     ];
 
     notes.forEach(([freq, delay, peak, decay]) => {
