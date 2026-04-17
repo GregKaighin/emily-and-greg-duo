@@ -243,7 +243,7 @@ function playChime() {
     // [frequency, delaySeconds, peakGain, decaySeconds]
     const notes = [
         [329.63, 0.00, 0.20, 2.2],   // E4
-        [987.77, 0.30, 0.16, 2.0],   // B5
+        [493.88, 0.30, 0.16, 2.0],   // B4
         [392.00, 0.52, 0.22, 3.0],   // G4
     ];
 
