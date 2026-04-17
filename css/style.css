@@ -15,6 +15,8 @@
     --font-head:   'Playfair Display', serif;
     --font-body:   'Lato', sans-serif;
     --transition:  0.3s ease;
+    --radius:      8px;
+    --radius-lg:   12px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,7 +83,7 @@ img { display: block; max-width: 100%; }
     background: linear-gradient(135deg, var(--gold-dark), var(--gold));
     color: var(--dark);
     border: none;
-    border-radius: 0;
+    border-radius: var(--radius);
     padding: 0.75rem 2.2rem;
     font-family: var(--font-body);
     font-weight: 700;
@@ -100,7 +102,7 @@ img { display: block; max-width: 100%; }
     background: transparent;
     color: var(--gold);
     border: 1px solid var(--gold);
-    border-radius: 0;
+    border-radius: var(--radius);
     padding: 0.75rem 2.2rem;
     font-family: var(--font-body);
     font-weight: 700;
@@ -304,6 +306,7 @@ img { display: block; max-width: 100%; }
 .badge-item {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
+    border-radius: var(--radius);
     color: var(--text-muted);
     padding: 0.5rem 1.25rem;
     font-size: 0.78rem;
@@ -322,6 +325,7 @@ img { display: block; max-width: 100%; }
     height: 0;
     overflow: hidden;
     cursor: pointer;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--dark-border);
     box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 48px rgba(201,169,110,0.08);
     background-color: #08060f;
@@ -406,6 +410,7 @@ img { display: block; max-width: 100%; }
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--dark-border);
     box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 48px rgba(201,169,110,0.08);
 }
@@ -506,6 +511,7 @@ img { display: block; max-width: 100%; }
 .repertoire-card {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
     height: 100%;
     overflow: hidden;
     transition: border-color var(--transition), box-shadow var(--transition);
@@ -552,6 +558,7 @@ img { display: block; max-width: 100%; }
 .testimonial-card {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
     padding: 2rem 1.8rem;
     height: 100%;
     transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
@@ -604,7 +611,7 @@ img { display: block; max-width: 100%; }
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
     color: var(--text);
-    border-radius: 0;
+    border-radius: var(--radius);
     padding: 0.72rem 1rem;
     font-family: var(--font-body);
     font-size: 0.93rem;
@@ -638,6 +645,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-success-msg {
     background: rgba(201, 169, 110, 0.08);
     border: 1px solid rgba(201, 169, 110, 0.5);
+    border-radius: var(--radius);
     color: var(--gold);
     padding: 1rem 1.4rem;
     font-size: 0.88rem;
@@ -647,6 +655,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .contact-info {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
     padding: 2rem 1.8rem;
     height: 100%;
 }
@@ -688,6 +697,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .social-link {
     width: 38px;
     height: 38px;
+    border-radius: var(--radius);
     border: 1px solid var(--dark-border);
     display: flex;
     align-items: center;
