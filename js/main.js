@@ -169,10 +169,23 @@ bookingForm.addEventListener('submit', e => {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Sending…';
 
+    const payload = {
+        _replyto:         document.getElementById('email').value,
+        _cc:              'songbirdemz@gmail.com',
+        _subject:         'New Booking Enquiry — Emily & Greg Duo',
+        'Name':           document.getElementById('name').value,
+        'Email':          document.getElementById('email').value,
+        'Phone Number':   document.getElementById('phone').value,
+        'Event Date':     document.getElementById('eventDate').value,
+        'Event Type':     document.getElementById('eventType').value,
+        'Event Location': document.getElementById('location').value,
+        'Message':        document.getElementById('message').value
+    };
+
     fetch('https://formspree.io/f/xyklwngb', {
         method: 'POST',
-        body: new FormData(bookingForm),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
     })
     .then(r => r.json())
     .then(data => {
