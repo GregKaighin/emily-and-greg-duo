@@ -236,12 +236,20 @@ img { display: block; max-width: 100%; }
     background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=1920&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     overflow: hidden;
+}
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 .hero-overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: linear-gradient(
         180deg,
         rgba(0,0,0,0.72) 0%,
@@ -249,7 +257,13 @@ img { display: block; max-width: 100%; }
         rgba(0,0,0,0.82) 100%
     );
 }
-.hero-content { position: relative; z-index: 2; padding: 1.5rem; }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    max-width: 760px;
+    margin: 0 auto;
+}
 
 .hero-pre {
     font-size: 0.68rem;
@@ -786,6 +800,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--gold);
     padding: 1rem 1.4rem;
     font-size: 0.88rem;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-success-msg.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Contact info panel */
