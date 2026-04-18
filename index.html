@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily &amp; Greg Duo | Jazz, Pop &amp; Soul | Lincolnshire</title>
     <meta name="description" content="Emily &amp; Greg Duo — live jazz, pop and soul music for weddings, functions and events across Lincolnshire and the East Midlands.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,6 +15,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"MusicGroup",
+      "name":"Emily & Greg Duo",
+      "description":"Live jazz, pop and soul music for weddings, functions and events across Lincolnshire and the East Midlands.",
+      "genre":["Jazz","Pop","Soul"],
+      "contactPoint":[
+        {
+          "@type":"ContactPoint",
+          "contactType":"booking",
+          "email":"gregkaighin@gmail.com",
+          "telephone":"+447704849036"
+        }
+      ]
+    }
+    </script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -73,7 +93,7 @@
             <div class="row g-5 justify-content-center">
                 <div class="col-md-5 text-center fade-up">
                     <div class="about-photo-wrap mx-auto">
-                        <img src="https://picsum.photos/seed/pianist42/400/400" alt="Greg — Piano" class="about-photo">
+                        <img src="https://picsum.photos/seed/pianist42/400/400" alt="Greg — Piano" class="about-photo" loading="lazy">
                     </div>
                     <h3 class="about-name mt-4">Greg Kaighin</h3>
                     <p class="about-instrument"><i class="fa-solid fa-music me-2"></i>Piano</p>
@@ -86,7 +106,7 @@
                 </div>
                 <div class="col-md-5 text-center fade-up" data-delay="200">
                     <div class="about-photo-wrap mx-auto">
-                        <img src="https://picsum.photos/seed/vocalist77/400/400" alt="Emily Farrar — Vocals" class="about-photo">
+                        <img src="https://picsum.photos/seed/vocalist77/400/400" alt="Emily Farrar — Vocals" class="about-photo" loading="lazy">
                     </div>
                     <h3 class="about-name mt-4">Emily Farrar</h3>
                     <p class="about-instrument"><i class="fa-solid fa-microphone me-2"></i>Vocals</p>
@@ -106,6 +126,36 @@
                         <div class="badge-item"><i class="fa-solid fa-champagne-glasses me-2"></i>Private Parties</div>
                         <div class="badge-item"><i class="fa-solid fa-utensils me-2"></i>Restaurant Dining</div>
                         <div class="badge-item"><i class="fa-solid fa-location-dot me-2"></i>Lincolnshire &amp; Beyond</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 g-4">
+                <div class="col-sm-6 col-lg-3 fade-up">
+                    <div class="feature-card">
+                        <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="feature-card-title">Trusted & insured</h3>
+                        <p class="feature-card-text">Professional performance with clear planning, insurance, and a calm, guest-friendly presence.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 fade-up" data-delay="120">
+                    <div class="feature-card">
+                        <div class="feature-card-icon"><i class="fa-solid fa-music"></i></div>
+                        <h3 class="feature-card-title">Flexible setlists</h3>
+                        <p class="feature-card-text">We tailor our song choices to suit your event, from ceremony music through to party classics.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 fade-up" data-delay="240">
+                    <div class="feature-card">
+                        <div class="feature-card-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3 class="feature-card-title">Easy booking</h3>
+                        <p class="feature-card-text">A simple enquiry form and fast response mean booking live music is quick and stress-free.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 fade-up" data-delay="360">
+                    <div class="feature-card">
+                        <div class="feature-card-icon"><i class="fa-solid fa-star"></i></div>
+                        <h3 class="feature-card-title">Memorable atmosphere</h3>
+                        <p class="feature-card-text">Warm vocals, elegant piano and a polished performance that lifts every moment.</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +187,7 @@
                         </div>
                     </div>
                     <!-- Video shown on click -->
-                    <div class="video-wrap d-none" id="videoEmbed">
+                    <div class="video-wrap d-none" id="videoEmbed" aria-label="Demo video player">
                         <video id="videoPlayer" playsinline preload="none">
                             <source src="https://github.com/GregKaighin/emily-and-greg-duo/releases/download/v1.0/demo_video.mp4" type="video/mp4">
                         </video>
@@ -164,6 +214,14 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="video-sample fade-up" data-delay="150">
+                        <p class="video-sample-text">
+                            Prefer to hear us first? We can share curated sample tracks and song choices for your event.
+                        </p>
+                        <div class="video-sample-actions">
+                            <a href="mailto:gregkaighin@gmail.com?subject=Audio%20Sample%20Request" class="btn btn-outline-gold">Request audio samples</a>
                         </div>
                     </div>
                 </div>
@@ -251,65 +309,121 @@
                 <div class="gold-divider mx-auto mt-3"></div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-4 fade-up">
-                    <div class="testimonial-card">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">
-                            Emily and Greg were absolutely wonderful at our wedding reception.
-                            The atmosphere they created was exactly what we'd hoped for —
-                            elegant, warm and completely magical. Our guests couldn't stop
-                            complimenting them all evening.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="author-name">Sarah &amp; James</p>
-                            <p class="author-event">Wedding Reception, Lincoln</p>
+            <div class="row">
+                <div class="col-12">
+                    <div id="testimonialCarousel" class="carousel slide fade-up" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="hover">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
                         </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">
+                                        Emily and Greg were absolutely wonderful at our wedding reception.
+                                        The atmosphere they created was exactly what we'd hoped for —
+                                        elegant, warm and completely magical. Our guests couldn't stop
+                                        complimenting them all evening.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="author-name">Sarah &amp; James</p>
+                                        <p class="author-event">Wedding Reception, Lincoln</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">
+                                        We booked Emily and Greg for our company Christmas dinner and they
+                                        were a real highlight of the evening. Professional, talented, and
+                                        they read the room brilliantly. Everyone was delighted. Highly
+                                        recommended without reservation.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="author-name">Mark Thompson</p>
+                                        <p class="author-event">Corporate Event, Nottingham</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">
+                                        We had Emily and Greg play at our 40th anniversary party and they
+                                        were simply superb. Every song was perfect — they took requests and
+                                        even learned a special song just for us. Truly exceptional musicians
+                                        and lovely people.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="author-name">Patricia &amp; Alan</p>
+                                        <p class="author-event">Anniversary Party, Lincolnshire</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-                <div class="col-md-4 fade-up" data-delay="150">
-                    <div class="testimonial-card">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">
-                            We booked Emily and Greg for our company Christmas dinner and they
-                            were a real highlight of the evening. Professional, talented, and
-                            they read the room brilliantly. Everyone was delighted. Highly
-                            recommended without reservation.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="author-name">Mark Thompson</p>
-                            <p class="author-event">Corporate Event, Nottingham</p>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="section-mid py-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <p class="section-pre">Frequently Asked</p>
+                <h2 class="section-title">Questions We Hear Most</h2>
+                <div class="gold-divider mx-auto mt-3"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 fade-up">
+                    <div class="faq-card">
+                        <h3 class="faq-question">Can you learn a special song for our event?</h3>
+                        <p class="faq-answer">Yes — we love learning bespoke songs for ceremonies, first dances and surprise moments. Just tell us your request in the booking form.</p>
                     </div>
                 </div>
-                <div class="col-md-4 fade-up" data-delay="300">
-                    <div class="testimonial-card">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">
-                            We had Emily and Greg play at our 40th anniversary party and they
-                            were simply superb. Every song was perfect — they took requests and
-                            even learned a special song just for us. Truly exceptional musicians
-                            and lovely people.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="author-name">Patricia &amp; Alan</p>
-                            <p class="author-event">Anniversary Party, Lincolnshire</p>
-                        </div>
+                <div class="col-md-6 fade-up" data-delay="120">
+                    <div class="faq-card">
+                        <h3 class="faq-question">How long do you play for?</h3>
+                        <p class="faq-answer">Our usual format is 2 x 45 minute sets, but we can tailor the timings to suit your event schedule.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-up" data-delay="240">
+                    <div class="faq-card">
+                        <h3 class="faq-question">Do you take song requests on the night?</h3>
+                        <p class="faq-answer">Absolutely. We can accept requests during the event and will happily adapt the setlist to match the mood.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-up" data-delay="360">
+                    <div class="faq-card">
+                        <h3 class="faq-question">What do you need from the venue?</h3>
+                        <p class="faq-answer">We need a small performance space, a power outlet, and a table for our equipment. We can handle the rest.</p>
                     </div>
                 </div>
             </div>
@@ -387,6 +501,14 @@
                 <div class="col-lg-5 fade-up" data-delay="200">
                     <div class="contact-info">
                         <h4 class="contact-info-title">Contact Details</h4>
+                        <div class="package-summary">
+                            <p class="package-label">Popular packages</p>
+                            <ul class="package-list">
+                                <li><strong>Signature Duo</strong> — 60 min live music for ceremony or drinks reception.</li>
+                                <li><strong>Event Set</strong> — 2 x 45 min performance sets with professional PA.</li>
+                                <li><strong>Special Request</strong> — bespoke songs and personalised planning.</li>
+                            </ul>
+                        </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
@@ -433,6 +555,10 @@
             </div>
         </div>
     </section>
+
+    <div class="sticky-booking-bar">
+        <a href="#contact" class="btn btn-gold">Book Emily &amp; Greg Duo</a>
+    </div>
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">

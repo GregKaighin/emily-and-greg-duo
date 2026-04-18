@@ -316,6 +316,93 @@ img { display: block; max-width: 100%; }
 }
 .badge-item:hover { border-color: var(--gold); color: var(--gold); }
 
+.feature-card,
+.faq-card,
+.video-sample,
+.package-summary {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
+}
+.feature-card {
+    padding: 1.6rem;
+    text-align: center;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.feature-card:hover,
+.faq-card:hover,
+.video-sample:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.28);
+}
+.feature-card-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    background: rgba(201,169,110,0.12);
+    font-size: 1.15rem;
+}
+.feature-card-title,
+.faq-question {
+    font-size: 1.05rem;
+    font-family: var(--font-head);
+    margin-bottom: 0.85rem;
+}
+.feature-card-text,
+.faq-answer {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+.video-sample {
+    padding: 1.6rem;
+    margin-top: 1.5rem;
+}
+.video-sample-text {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.96rem;
+}
+.video-sample-actions .btn {
+    min-width: 220px;
+}
+.faq-card {
+    padding: 1.5rem;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.package-summary {
+    padding: 1.4rem 1.6rem 1.3rem;
+    margin-bottom: 1.5rem;
+}
+.package-label {
+    color: var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: block;
+}
+.package-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.package-list li {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 0.85rem;
+}
+.package-list li strong {
+    color: var(--text);
+}
+
 /* ============================================================
    VIDEO
    ============================================================ */
@@ -568,6 +655,34 @@ img { display: block; max-width: 100%; }
     transform: translateY(-5px);
     box-shadow: 0 20px 48px rgba(0,0,0,0.35);
 }
+#testimonialCarousel .testimonial-card {
+    max-width: 760px;
+    margin: 0 auto;
+}
+#testimonialCarousel .carousel-item {
+    padding: 0.75rem 0;
+}
+#testimonialCarousel .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.35);
+}
+#testimonialCarousel .carousel-indicators .active {
+    background-color: var(--gold);
+}
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    filter: invert(100%) sepia(0%);
+    background-color: rgba(201,169,110,0.2);
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+#testimonialCarousel .carousel-control-prev,
+#testimonialCarousel .carousel-control-next {
+    width: 4rem;
+}
 .quote-icon {
     color: var(--gold);
     opacity: 0.28;
@@ -735,6 +850,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transition: color var(--transition);
 }
 .footer-links a:hover { color: var(--gold); }
+
+.sticky-booking-bar {
+    display: none;
+}
+@media (max-width: 991px) {
+    .sticky-booking-bar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1100;
+        padding: calc(0.8rem + env(safe-area-inset-bottom, 0)) 1rem 1rem;
+        background: rgba(9, 9, 9, 0.92);
+        backdrop-filter: blur(14px);
+    }
+    .sticky-booking-bar .btn {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        font-size: 0.95rem;
+    }
+}
 
 /* ============================================================
    SCROLL ANIMATIONS
