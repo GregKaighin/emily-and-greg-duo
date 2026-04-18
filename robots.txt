@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gregkaighin.github.io/emily-and-greg-duo/sitemap.xml

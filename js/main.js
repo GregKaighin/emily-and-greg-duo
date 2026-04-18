@@ -61,6 +61,7 @@
     }
 
     function loop() {
+        if (document.hidden) { requestAnimationFrame(loop); return; }
         ctx.clearRect(0, 0, W, H);
         particles.forEach(p => { p.update(); p.draw(); });
         requestAnimationFrame(loop);
@@ -320,7 +321,7 @@ bookingForm.addEventListener('submit', e => {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
     })
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error(r.statusText); return r.json(); })
     .then(data => {
         if (data.ok) {
             playChime();

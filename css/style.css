@@ -353,7 +353,6 @@ img { display: block; max-width: 100%; }
 
 .feature-card,
 .faq-card,
-.video-sample,
 .package-summary {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
@@ -365,8 +364,7 @@ img { display: block; max-width: 100%; }
     transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .feature-card:hover,
-.faq-card:hover,
-.video-sample:hover {
+.faq-card:hover {
     border-color: var(--gold);
     transform: translateY(-3px);
     box-shadow: 0 24px 48px rgba(0,0,0,0.28);
@@ -395,18 +393,7 @@ img { display: block; max-width: 100%; }
     font-size: 0.95rem;
     line-height: 1.8;
 }
-.video-sample {
-    padding: 1.6rem;
-    margin-top: 1.5rem;
-}
-.video-sample-text {
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    font-size: 0.96rem;
-}
-.video-sample-actions .btn {
-    min-width: 220px;
-}
+
 .faq-card {
     padding: 1.5rem;
     transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
