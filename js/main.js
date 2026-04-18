@@ -108,18 +108,32 @@ fadeEls.forEach(el => observer.observe(el));
 const videoFacade  = document.getElementById('videoFacade');
 const videoEmbed   = document.getElementById('videoEmbed');
 
+function activateVideo() {
+    if (!videoFacade) return;
+    videoFacade.style.display = 'none';
+    videoEmbed.classList.remove('d-none');
+    document.getElementById('videoPlayer').play();
+}
+
 if (videoFacade) {
-    const activate = () => {
-        videoFacade.style.display = 'none';
-        videoEmbed.classList.remove('d-none');
-        const video = document.getElementById('videoPlayer');
-        video.play();
-    };
-    videoFacade.addEventListener('click', activate);
+    videoFacade.addEventListener('click', activateVideo);
     videoFacade.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateVideo(); }
     });
 }
+
+// "Watch Us" / "Watch Our Demo" links — scroll then autoplay
+document.querySelectorAll('a[href="#video"]').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const section = document.getElementById('video');
+        section.scrollIntoView({ behavior: 'smooth' });
+        let done = false;
+        const trigger = () => { if (!done) { done = true; activateVideo(); } };
+        window.addEventListener('scrollend', trigger, { once: true });
+        setTimeout(trigger, 900); // fallback for browsers without scrollend
+    });
+});
 
 (function initVideoControls() {
     const video      = document.getElementById('videoPlayer');
