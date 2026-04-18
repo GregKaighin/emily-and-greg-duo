@@ -233,8 +233,7 @@ if (videoFacade) {
     wrap.addEventListener('mouseleave', () => { if (!video.paused) controls.style.opacity = ''; });
 })();
 
-// ── Success chime — opening three notes of "Emily" (Bill Evans) ──
-// Melody: B4 → A4 → G4 (descending stepwise, key of G major)
+// ── Success chime — E4 → B4 → G4 ──
 function playChime() {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     if (!AudioCtx) return;
