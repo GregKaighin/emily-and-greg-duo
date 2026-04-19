@@ -326,14 +326,19 @@ bookingForm.addEventListener('submit', e => {
         if (data.ok) {
             playChime();
             formSuccess.classList.remove('d-none');
+            formSuccess.classList.add('show');
+            formSuccess.focus();
             bookingForm.reset();
             bookingForm.classList.remove('was-validated');
-            setTimeout(() => formSuccess.classList.add('d-none'), 6000);
+            setTimeout(() => {
+                formSuccess.classList.remove('show');
+                formSuccess.classList.add('d-none');
+            }, 6000);
         } else {
-            alert('Sorry, something went wrong. Please email us directly at info@emilyandgregduo.co.uk');
+            alert('Sorry, something went wrong. Please email us directly at gregkaighin@gmail.com');
         }
     })
-    .catch(() => alert('Sorry, something went wrong. Please email us directly at info@emilyandgregduo.co.uk'))
+    .catch(() => alert('Sorry, something went wrong. Please email us directly at gregkaighin@gmail.com'))
     .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Send Enquiry';
