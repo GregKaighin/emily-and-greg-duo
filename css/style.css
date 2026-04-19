@@ -877,6 +877,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .contact-link:hover { color: var(--gold); }
 .contact-value { color: var(--text); font-size: 0.93rem; margin: 0; }
 .pricing-highlight { color: var(--gold); font-family: var(--font-head); font-size: 1.15rem; font-style: italic; }
+.contact-note { font-size: 0.75rem; color: var(--text-muted); margin: 0.25rem 0 0; line-height: 1.4; }
 
 .social-links { display: flex; gap: 0.6rem; }
 .social-link {
