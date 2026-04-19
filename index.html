@@ -77,6 +77,9 @@
 
     <!-- ===================== HERO ===================== -->
     <section id="home" class="hero d-flex align-items-center justify-content-center">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/thumbnail.jpg" aria-hidden="true">
+            <source src="images/hero_bg.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
         <div class="hero-content text-center position-relative">
             <p class="hero-pre fade-up">Live Music for Special Occasions</p>
@@ -111,7 +114,10 @@
             <div class="row g-5 justify-content-center">
                 <div class="col-md-5 text-center fade-up">
                     <div class="about-photo-wrap mx-auto">
-                        <img src="images/emily-portrait-1.jpg" alt="Emily Farrar — Vocals" class="about-photo" loading="lazy">
+                        <picture>
+                            <source srcset="images/emily-portrait-1.webp" type="image/webp">
+                            <img src="images/emily-portrait-1.jpg" alt="Emily Farrar — Vocals" class="about-photo" loading="lazy">
+                        </picture>
                     </div>
                     <h3 class="about-name mt-4">Emily Farrar</h3>
                     <p class="about-instrument"><i class="fa-solid fa-microphone me-2"></i>Vocals</p>
@@ -123,7 +129,10 @@
                 </div>
                 <div class="col-md-5 text-center fade-up" data-delay="200">
                     <div class="about-photo-wrap mx-auto">
-                        <img src="images/greg-portrait.jpg" alt="Greg — Piano" class="about-photo" loading="lazy">
+                        <picture>
+                            <source srcset="images/greg-portrait.webp" type="image/webp">
+                            <img src="images/greg-portrait.jpg" alt="Greg — Piano" class="about-photo" loading="lazy">
+                        </picture>
                     </div>
                     <h3 class="about-name mt-4">Greg Kaighin</h3>
                     <p class="about-instrument"><i class="fa-solid fa-music me-2"></i>Piano</p>
