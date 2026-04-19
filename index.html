@@ -24,9 +24,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Preload hero background so LCP image starts fetching immediately -->
+    <link rel="preload" as="image" href="images/hero-bg.jpg">
 
-    <!-- Bootstrap 5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3 — deferred to eliminate render-blocking -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
     <!-- Google Fonts — deferred, display=swap prevents invisible text during load -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
@@ -115,7 +119,7 @@
                     <div class="about-photo-wrap mx-auto">
                         <picture>
                             <source srcset="images/emily-portrait-1.webp" type="image/webp">
-                            <img src="images/emily-portrait-1.jpg" alt="Emily Farrar — Vocals" class="about-photo" loading="lazy">
+                            <img src="images/emily-portrait-1.jpg" alt="Emily Farrar — Vocals" class="about-photo" loading="lazy" width="840" height="1493">
                         </picture>
                     </div>
                     <h3 class="about-name mt-4">Emily Farrar</h3>
@@ -130,7 +134,7 @@
                     <div class="about-photo-wrap mx-auto">
                         <picture>
                             <source srcset="images/greg-portrait.webp" type="image/webp">
-                            <img src="images/greg-portrait.jpg" alt="Greg — Piano" class="about-photo" loading="lazy">
+                            <img src="images/greg-portrait.jpg" alt="Greg — Piano" class="about-photo" loading="lazy" width="420" height="420">
                         </picture>
                     </div>
                     <h3 class="about-name mt-4">Greg Kaighin</h3>
@@ -615,7 +619,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>

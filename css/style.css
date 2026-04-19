@@ -247,7 +247,7 @@ img { display: block; max-width: 100%; }
     position: relative;
     min-height: 100vh;
     background-color: #0a0810;
-    background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=1920&q=80');
+    background-image: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
