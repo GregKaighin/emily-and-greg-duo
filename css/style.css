@@ -1022,42 +1022,12 @@ body::after {
     .repertoire-list { columns: 1; }
     .footer-inner { text-align: center; }
 
-    /* Mobile shimmer: background-clip:text animation doesn't run on mobile Chrome.
-       Replace with a clip-path-contained overlay using transform+opacity (GPU composited). */
-    @keyframes shimmer-mob {
-        0%   { opacity: 0; transform: translateX(-300%); }
-        12%  { opacity: 1; }
-        88%  { opacity: 1; }
-        100% { opacity: 0; transform: translateX(500%); }
-    }
     .hero-title {
         background: none;
         -webkit-background-clip: unset;
         background-clip: unset;
         color: var(--text);
         animation: none;
-        position: relative;
-        clip-path: inset(0 0 -0.35em 0);
     }
-    .hero-title::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 22%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.28) 30%,
-            rgba(232,201,138,0.48) 50%,
-            rgba(255,255,255,0.28) 70%,
-            transparent
-        );
-        mix-blend-mode: overlay;
-        opacity: 0;
-        animation: shimmer-mob 8s ease-in-out infinite;
-        pointer-events: none;
-        will-change: transform, opacity;
-    }
+    .hero-title::after { display: none; }
 }
