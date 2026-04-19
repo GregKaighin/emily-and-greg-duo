@@ -279,8 +279,9 @@ img { display: block; max-width: 100%; }
     margin-bottom: 0.8rem;
 }
 @keyframes shimmer {
-    0%   { background-position: 200% center; }
-    100% { background-position: -200% center; }
+    0%   { background-position: 0% center; }
+    30%  { background-position: 100% center; }
+    100% { background-position: 100% center; }
 }
 .hero-title {
     font-size: clamp(3.5rem, 11vw, 8.5rem);
@@ -298,11 +299,11 @@ img { display: block; max-width: 100%; }
         rgba(255,255,255,0.92) 53%,
         var(--text) 70%
     );
-    background-size: 250% auto;
+    background-size: 400% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: shimmer 8s ease-in-out infinite;
+    animation: shimmer 7s ease-in-out infinite;
 }
 .amp { color: var(--gold); }
 
