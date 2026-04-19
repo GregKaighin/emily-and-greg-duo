@@ -1015,11 +1015,8 @@ body::after {
     .footer-inner { text-align: center; }
 
     .hero-title {
-        background: none;
-        -webkit-background-clip: unset;
-        background-clip: unset;
-        color: var(--text);
-        animation: none;
+        transform: translateZ(0);
+        will-change: background-position;
+        -webkit-text-fill-color: transparent;
     }
-    .hero-title::after { display: none; }
 }
