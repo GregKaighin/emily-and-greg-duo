@@ -447,22 +447,77 @@ img { display: block; max-width: 100%; }
     font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.9rem;
     display: block;
 }
-.package-list {
-    list-style: none;
-    padding: 0;
+.package-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+.package-card {
+    padding: 0.7rem 0.9rem;
+    border-left: 2px solid var(--dark-border);
+    transition: border-color var(--transition);
+}
+.package-card:hover {
+    border-left-color: var(--gold);
+}
+.package-card--featured {
+    border-left-color: var(--gold-dark);
+    background: rgba(201, 169, 110, 0.05);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.package-card--featured:hover {
+    border-left-color: var(--gold-light);
+}
+.package-name {
+    color: var(--text);
+    font-size: 0.93rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.package-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201, 169, 110, 0.12);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 20px;
+    padding: 0.1rem 0.5rem;
+}
+.package-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.55;
     margin: 0;
 }
-.package-list li {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.75;
-    margin-bottom: 0.85rem;
+.package-addon {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--dark-border);
 }
-.package-list li strong {
-    color: var(--text);
+.addon-tag {
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    background: rgba(160, 120, 64, 0.15);
+    border: 1px solid rgba(160, 120, 64, 0.35);
+    border-radius: 4px;
+    padding: 0.2rem 0.45rem;
+    margin-top: 0.15rem;
 }
 
 /* ============================================================
