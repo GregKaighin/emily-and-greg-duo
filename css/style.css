@@ -481,6 +481,13 @@ img { display: block; max-width: 100%; }
     gap: 0.5rem;
     margin-bottom: 0.2rem;
 }
+.package-price {
+    display: block;
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0.35rem;
+}
 .package-badge {
     font-size: 0.65rem;
     font-weight: 600;
