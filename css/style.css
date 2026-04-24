@@ -242,7 +242,7 @@ img { display: block; max-width: 100%; }
     position: relative;
     min-height: 100vh;
     background-color: #0a0810;
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('../images/thumbnail.jpg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
