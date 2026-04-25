@@ -94,7 +94,7 @@ img { display: block; max-width: 100%; }
    SECTION HEADERS
    ============================================================ */
 .section-pre {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold);
@@ -112,7 +112,7 @@ img { display: block; max-width: 100%; }
 }
 .gold-divider {
     width: 56px;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 .text-muted-gold {
@@ -342,8 +342,8 @@ img { display: block; max-width: 100%; }
    ABOUT
    ============================================================ */
 .about-photo-wrap {
-    width: 210px;
-    height: 210px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--gold);
@@ -778,6 +778,9 @@ img { display: block; max-width: 100%; }
     max-width: 760px;
     margin: 0 auto;
 }
+#testimonialCarousel .testimonial-card:hover {
+    transform: none;
+}
 #testimonialCarousel .carousel-item {
     padding: 0.75rem 0;
 }
@@ -810,8 +813,8 @@ img { display: block; max-width: 100%; }
 }
 .testimonial-text {
     color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.85;
+    font-size: 1rem;
+    line-height: 1.9;
     font-style: italic;
     margin-bottom: 1.4rem;
 }
