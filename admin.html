@@ -134,6 +134,20 @@
         .admin-delete-btn:hover { background: #c0392b; color: #fff; }
         .admin-delete-btn:disabled { opacity: 0.4; cursor: default; }
         .admin-empty { color: var(--text-muted); font-size: 0.9rem; }
+        select {
+            width: 100%; padding: 0.6rem 0.8rem;
+            background: #0d0d0d; border: 1px solid #2a2a2a;
+            color: var(--text); border-radius: 6px;
+            font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+        }
+        select:focus { border-color: var(--gold); }
+        .act-badge {
+            font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
+            border-radius: 20px; padding: 0.15rem 0.55rem; font-weight: 600;
+        }
+        .act-badge.duo  { background: rgba(201,169,110,0.15); color: var(--gold); }
+        .act-badge.joy  { background: rgba(212,132,158,0.15); color: #d4849e; }
+        .act-badge.both { background: rgba(255,255,255,0.08); color: #aaa; }
     </style>
 </head>
 <body>
@@ -185,6 +199,14 @@
                     <div class="field field-full">
                         <label for="gig-details">Details (optional)</label>
                         <input type="text" id="gig-details" placeholder="e.g. Wedding reception — ticketed event">
+                    </div>
+                    <div class="field field-full">
+                        <label for="gig-act">Act *</label>
+                        <select id="gig-act" required>
+                            <option value="Emily &amp; Greg Duo">Emily &amp; Greg Duo</option>
+                            <option value="Emily Joy">Emily Joy</option>
+                            <option value="Both">Both</option>
+                        </select>
                     </div>
                 </div>
                 <button type="submit" class="btn-add">Add Gig</button>

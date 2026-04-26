@@ -59,10 +59,13 @@ function renderGigs(gigs) {
         const dateStr = d.toLocaleDateString('en-GB', {
             weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
         });
+        const actClass = gig.act === 'Emily Joy' ? 'joy' : gig.act === 'Both' ? 'both' : 'duo';
+        const actLabel = gig.act || 'Emily & Greg Duo';
         return `
         <div class="admin-gig-row${isPast ? ' admin-gig-past' : ''}">
             <div class="admin-gig-info">
                 <span class="admin-gig-date">${dateStr}</span>
+                <span class="act-badge ${actClass}">${actLabel}</span>
                 <span class="admin-gig-venue">${gig.venue}</span>
                 ${gig.time    ? `<span class="admin-gig-meta">${gig.time}</span>` : ''}
                 ${gig.details ? `<span class="admin-gig-meta">${gig.details}</span>` : ''}
@@ -123,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date:    document.getElementById('gig-date').value,
             venue:   document.getElementById('gig-venue').value.trim(),
             time:    document.getElementById('gig-time').value.trim(),
-            details: document.getElementById('gig-details').value.trim()
+            details: document.getElementById('gig-details').value.trim(),
+            act:     document.getElementById('gig-act').value
         };
         try {
             await addGig(gigData);
