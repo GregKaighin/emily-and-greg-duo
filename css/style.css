@@ -1082,3 +1082,84 @@ body::after {
         -webkit-text-fill-color: transparent;
     }
 }
+
+/* ============================================================
+   GIGS SECTION
+   ============================================================ */
+.gig-card {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+.gig-card:hover {
+    border-color: rgba(201,169,110,0.4);
+    transform: translateY(-3px);
+}
+.gig-date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+    background: rgba(201,169,110,0.08);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius);
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+.gig-day-name {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.gig-day-num {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin: 0.1rem 0;
+}
+.gig-month-year {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+.gig-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+.gig-venue {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0;
+    font-weight: 600;
+}
+.gig-time {
+    font-size: 0.82rem;
+    color: var(--gold);
+    margin: 0;
+}
+.gig-details {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+.gig-empty {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.gig-empty a {
+    color: var(--gold);
+}

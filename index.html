@@ -84,6 +84,7 @@
                     <li class="nav-item"><a class="nav-link" href="#video">Watch Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#repertoire">Repertoire</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gigs">Gigs</a></li>
                     <li class="nav-item ms-lg-3"><a class="nav-link btn-book" href="#contact">Book Us</a></li>
                 </ul>
             </div>
@@ -474,6 +475,24 @@
 
     <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 C360,48 720,4 1080,36 C1260,44 1380,12 1440,28 L1440,48 L0,48 Z" fill="#0d0d0d"/></svg></div>
 
+    <!-- ===================== GIGS ===================== -->
+    <section id="gigs" class="section-dark py-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <p class="section-pre">Live Dates</p>
+                <h2 class="section-title">Upcoming Gigs</h2>
+                <div class="gold-divider mx-auto mt-3"></div>
+            </div>
+            <div id="gigs-list" class="row g-4 justify-content-center">
+                <div class="col-12 text-center">
+                    <p class="gig-empty">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,28 C360,4 720,48 1080,16 C1260,8 1380,40 1440,20 L1440,48 L0,48 Z" fill="#131313"/></svg></div>
+
     <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="section-dark py-section">
         <div class="container">
@@ -662,5 +681,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
+    <!-- Gigs -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/gigs.js"></script>
 </body>
 </html>
