@@ -12,5 +12,5 @@
 //  6. Project Settings → Web API Key → copy to FIREBASE_API_KEY below
 //  7. Realtime Database → copy the database URL to FIREBASE_DB_URL below
 
-const FIREBASE_API_KEY = 'YOUR_API_KEY_HERE';
-const FIREBASE_DB_URL  = 'https://YOUR-PROJECT-ID-default-rtdb.firebaseio.com';
+const FIREBASE_API_KEY = 'AIzaSyDWPXHWJIbcZ9zPu9ld8SysSDBQ8TvoheM';
+const FIREBASE_DB_URL  = 'https://emily-and-greg-duo-gigs-default-rtdb.firebaseio.com';
