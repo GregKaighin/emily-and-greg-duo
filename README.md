@@ -2,7 +2,9 @@
 
 Promotional website for Emily & Greg Duo, a live jazz, pop and soul duo based in Lincolnshire, UK. Built as a single-page static site to attract wedding and event bookings across Lincolnshire and the East Midlands.
 
-**Live site:** https://gregkaighin.github.io/emily-and-greg-duo
+**Live site:** https://emilyandgregduo.co.uk
+
+**Admin (gig management):** https://emilyandgregduo.co.uk/admin.html
 
 ---
 
