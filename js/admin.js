@@ -28,7 +28,10 @@ async function addGig(gigData) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(gigData)
     });
-    if (!res.ok) throw new Error('Failed to add gig');
+    if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(`${res.status} — ${err.error || 'unknown error'}`);
+    }
 }
 
 async function deleteGig(id) {

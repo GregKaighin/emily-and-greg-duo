@@ -13,4 +13,4 @@
 //  7. Realtime Database → copy the database URL to FIREBASE_DB_URL below
 
 const FIREBASE_API_KEY = 'AIzaSyDWPXHWJIbcZ9zPu9ld8SysSDBQ8TvoheM';
-const FIREBASE_DB_URL  = 'https://emily-and-greg-duo-gigs-default-rtdb.firebaseio.com';
+const FIREBASE_DB_URL  = 'https://emily-and-greg-duo-gigs-default-rtdb.europe-west1.firebasedatabase.app';
