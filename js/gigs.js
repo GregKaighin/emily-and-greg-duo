@@ -38,7 +38,7 @@
                 const month   = d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
                 const year    = d.getFullYear();
                 return `
-                <div class="col-sm-6 col-lg-4 fade-up">
+                <div class="col-sm-6 col-lg-4">
                     <div class="gig-card">
                         <div class="gig-date-block">
                             <span class="gig-day-name">${dayName}</span>
