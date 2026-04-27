@@ -1088,47 +1088,50 @@ body::after {
    ============================================================ */
 .gig-card {
     display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
+    align-items: stretch;
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
+    border-top: 3px solid var(--gold);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    transition: border-color var(--transition), transform var(--transition);
+    overflow: hidden;
+    padding: 0;
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .gig-card:hover {
-    border-color: rgba(201,169,110,0.4);
-    transform: translateY(-3px);
+    border-color: rgba(201,169,110,0.5);
+    border-top-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
 }
 .gig-date-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 60px;
-    background: rgba(201,169,110,0.08);
-    border: 1px solid var(--dark-border);
-    border-radius: var(--radius);
-    padding: 0.6rem 0.5rem;
+    justify-content: center;
+    min-width: 72px;
+    background: rgba(201,169,110,0.07);
+    border-right: 1px solid var(--dark-border);
+    padding: 1.25rem 0.65rem;
     text-align: center;
     flex-shrink: 0;
 }
 .gig-day-name {
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
     color: var(--gold);
     text-transform: uppercase;
     font-weight: 700;
 }
 .gig-day-num {
     font-family: var(--font-head);
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--text);
     line-height: 1;
-    margin: 0.1rem 0;
+    margin: 0.15rem 0;
 }
 .gig-month-year {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 0.1em;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -1137,23 +1140,30 @@ body::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.3rem;
+    padding: 1.1rem 1.25rem;
+    flex: 1;
+    min-width: 0;
 }
 .gig-venue {
     font-family: var(--font-head);
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text);
     margin: 0;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .gig-time {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--gold);
     margin: 0;
 }
 .gig-details {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
+    font-style: italic;
     margin: 0;
 }
 .gig-empty {
