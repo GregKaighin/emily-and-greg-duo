@@ -32,11 +32,13 @@
             }
 
             container.innerHTML = gigs.map(gig => {
-                const d       = new Date(gig.date + 'T12:00:00');
-                const dayName = d.toLocaleDateString('en-GB', { weekday: 'short' }).toUpperCase();
-                const dayNum  = d.getDate();
-                const month   = d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
-                const year    = d.getFullYear();
+                const d        = new Date(gig.date + 'T12:00:00');
+                const dayName  = d.toLocaleDateString('en-GB', { weekday: 'short' }).toUpperCase();
+                const dayNum   = d.getDate();
+                const month    = d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
+                const year     = d.getFullYear();
+                const actClass = gig.act === 'Emily Joy' ? 'joy' : 'duo';
+                const actLabel = gig.act || 'Emily &amp; Greg Duo';
                 return `
                 <div class="col-sm-6 col-lg-4">
                     <div class="gig-card">
@@ -46,6 +48,7 @@
                             <span class="gig-month-year">${month} ${year}</span>
                         </div>
                         <div class="gig-body">
+                            <span class="act-badge ${actClass}">${actLabel}</span>
                             <p class="gig-venue">${gig.venue}</p>
                             ${gig.time    ? `<p class="gig-time">${gig.time}</p>` : ''}
                             ${gig.details ? `<p class="gig-details">${gig.details}</p>` : ''}
