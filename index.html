@@ -84,7 +84,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#video">Watch Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#repertoire">Repertoire</a></li>
-                    <li class="nav-item" id="reviews-nav-item" style="display:none"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item" id="reviews-nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gigs">Gigs</a></li>
                     <li class="nav-item ms-lg-3"><a class="nav-link btn-book" href="#contact">Book Us</a></li>
                 </ul>
@@ -340,7 +340,7 @@
     <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,8 C480,48 960,0 1440,32 L1440,48 L0,48 Z" fill="#0d0d0d"/></svg></div>
 
     <!-- ===================== TESTIMONIALS ===================== -->
-    <section id="testimonials" class="section-dark py-section" style="display:none">
+    <section id="testimonials" class="section-dark py-section">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <p class="section-pre">Kind Words</p>
@@ -350,8 +350,49 @@
             <div class="row">
                 <div class="col-12">
                     <div id="testimonialCarousel" class="carousel slide fade-up" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="hover">
-                        <div class="carousel-indicators"></div>
-                        <div class="carousel-inner"></div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Review 1"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Review 2"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Review 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">Emily and Greg were absolutely perfect for our wedding reception. The atmosphere they created was magical — every guest was on their feet by the end of the evening. We couldn't have asked for more.</p>
+                                    <div class="testimonial-author">
+                                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                        <div class="author-avatar">SH</div>
+                                        <p class="author-name">Sarah H.</p>
+                                        <p class="author-event">Wedding Reception</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">We hired Emily and Greg for our corporate dinner and they were a huge hit. Professional, talented, and brilliant at reading the room. The jazz set during the meal was the highlight of the evening.</p>
+                                    <div class="testimonial-author">
+                                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                        <div class="author-avatar">JM</div>
+                                        <p class="author-name">James M.</p>
+                                        <p class="author-event">Corporate Dinner</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card mx-auto">
+                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <p class="testimonial-text">From the first enquiry to the last song, everything was effortless. Emily's voice is stunning and Greg is a wonderful guitarist. Our guests are still talking about it weeks later.</p>
+                                    <div class="testimonial-author">
+                                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                        <div class="author-avatar">RC</div>
+                                        <p class="author-name">Rachel C.</p>
+                                        <p class="author-event">Private Party</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -619,8 +660,5 @@
     <!-- Gigs -->
     <script src="js/firebase-config.js?v=5"></script>
     <script src="js/gigs.js?v=5"></script>
-    <!-- Google Reviews -->
-    <script src="js/reviews.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDhih-K4KrlU9tVPAo984etszsONxnZZw&libraries=places&callback=initReviews" async defer></script>
 </body>
 </html>
