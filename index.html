@@ -84,7 +84,7 @@ a<!DOCTYPE html>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#video">Watch Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#repertoire">Repertoire</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item" id="reviews-nav-item" style="display:none"><a class="nav-link" href="#testimonials">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gigs">Gigs</a></li>
                     <li class="nav-item ms-lg-3"><a class="nav-link btn-book" href="#contact">Book Us</a></li>
                 </ul>
@@ -340,87 +340,18 @@ a<!DOCTYPE html>
     <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,8 C480,48 960,0 1440,32 L1440,48 L0,48 Z" fill="#0d0d0d"/></svg></div>
 
     <!-- ===================== TESTIMONIALS ===================== -->
-    <section id="testimonials" class="section-dark py-section">
+    <section id="testimonials" class="section-dark py-section" style="display:none">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <p class="section-pre">Kind Words</p>
                 <h2 class="section-title">What Our Clients Say</h2>
                 <div class="gold-divider mx-auto mt-3"></div>
             </div>
-
             <div class="row">
                 <div class="col-12">
                     <div id="testimonialCarousel" class="carousel slide fade-up" data-bs-ride="carousel" data-bs-interval="7000" data-bs-pause="hover">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
-                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
-                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial-card mx-auto">
-                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <p class="testimonial-text">
-                                        Emily and Greg were absolutely wonderful at our wedding reception.
-                                        The atmosphere they created was exactly what we'd hoped for —
-                                        elegant, warm and completely magical. Our guests couldn't stop
-                                        complimenting them all evening.
-                                    </p>
-                                    <div class="testimonial-author">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="author-avatar">S&amp;J</div>
-                                        <p class="author-name">Sarah &amp; James</p>
-                                        <p class="author-event">Wedding Reception, Lincoln</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-card mx-auto">
-                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <p class="testimonial-text">
-                                        We booked Emily and Greg for our company Christmas dinner and they
-                                        were a real highlight of the evening. Professional, talented, and
-                                        they read the room brilliantly. Everyone was delighted. Highly
-                                        recommended without reservation.
-                                    </p>
-                                    <div class="testimonial-author">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="author-avatar">MT</div>
-                                        <p class="author-name">Mark Thompson</p>
-                                        <p class="author-event">Corporate Event, Nottingham</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-card mx-auto">
-                                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <p class="testimonial-text">
-                                        We had Emily and Greg play at our 40th anniversary party and they
-                                        were simply superb. Every song was perfect — they took requests and
-                                        even learned a special song just for us. Truly exceptional musicians
-                                        and lovely people.
-                                    </p>
-                                    <div class="testimonial-author">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="author-avatar">P&amp;A</div>
-                                        <p class="author-name">Patricia &amp; Alan</p>
-                                        <p class="author-event">Anniversary Party, Lincolnshire</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="carousel-indicators"></div>
+                        <div class="carousel-inner"></div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -688,5 +619,8 @@ a<!DOCTYPE html>
     <!-- Gigs -->
     <script src="js/firebase-config.js?v=5"></script>
     <script src="js/gigs.js?v=5"></script>
+    <!-- Google Reviews -->
+    <script src="js/reviews.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=MAPS_API_KEY&libraries=places&callback=initReviews" async defer></script>
 </body>
 </html>
