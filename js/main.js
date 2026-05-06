@@ -326,7 +326,7 @@ bookingForm.addEventListener('submit', e => {
         if (data.ok) {
             playChime();
             if (typeof gtag === 'function') {
-                gtag('event', 'conversion', { send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL' });
+                gtag('event', 'conversion_event_submit_lead_form_1');
             }
             formSuccess.classList.remove('d-none');
             formSuccess.classList.add('show');
